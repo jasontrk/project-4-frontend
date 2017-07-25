@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+
+<form ng-submit="login.submit()" class="six columns">
+  <label for="email">Email</label>
+  <input class="u-full-width" type="text" name="email" id="email" ng-model="login.credentials.email">
+
+  <label for="password">Password</label>
+  <input class="u-full-width" type="password" name="password" id="password" ng-model="login.credentials.password">
+
+  <input type="submit" class="button-primary u-full-width" value="Login">
+</form>
+<!-- <div class="twelve columns">
+  <button ng-click="login.authenticate('github')">Login with GitHub</button>
+  <button ng-click="login.authenticate('facebook')">Login with Facebook</button>
+</div> -->

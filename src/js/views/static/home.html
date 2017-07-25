@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<body ng-controller="MainCtrl as main">
+  <ul>
+    <li ng-repeat="user in main.users">
+      <strong>{{ user.username }}</strong>
+
+      <p>Liked Media:</p>
+      <div ng-repeat="medium in user.liked_media">
+        <p><em>{{ medium.name }}</em></p>
+      </div>
+
+      <p>Disliked Media:</p>
+      <div ng-repeat="medium in user.disliked_media">
+        <p><em>{{ medium.name }}</em></p>
+      </div>
+
+      <p>Saved Media:</p>
+      <div ng-repeat="medium in user.saved_media">
+        <p><em>{{ medium.name }}</em></p>
+      </div>
+
+      <div ng-repeat="user in medium.saves.users">
+        <p><em>{{ user.username }}</em></p>
+      </div>
+    </li>
+
+    <!-- <div ng-repeat="users in medium.likes">
+    <p><em>{{ user.name }}</em></p>
+  </div>
+-->
+</ul>
+</body>
