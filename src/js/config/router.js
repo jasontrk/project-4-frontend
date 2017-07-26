@@ -33,5 +33,5 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   });
 
   $urlRouterProvider.otherwise('/');
-  
+
 }

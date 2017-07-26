@@ -2,8 +2,8 @@ angular
 .module('mediaApp')
 .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$rootScope', '$state', '$auth', '$transitions', 'User', 'tmdb'];
-function MainCtrl($rootScope, $state, $auth, $transitions, User, tmdb) {
+MainCtrl.$inject = ['$rootScope', '$state', '$auth', '$transitions', 'User'];
+function MainCtrl($rootScope, $state, $auth, $transitions, User) {
   const vm = this;
   vm.users = User.query();
   vm.isNavCollapsed = true;
@@ -49,19 +49,5 @@ function MainCtrl($rootScope, $state, $auth, $transitions, User, tmdb) {
 
   vm.logout = logout;
 
-  function searchMovies(){
-    tmdb.getMovies(vm.movie)
-    .then((response) => {
-      vm.movies = response.results;
 
-    });
-  }
-  vm.searchMovies = searchMovies;
-
-  // function likeMovie(){
-  //   console.log(vm.movies.indexOf());
-  //
-  // }
-  //
-  // vm.likeMovie = likeMovie;
 }

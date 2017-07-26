@@ -21,14 +21,17 @@
       <li ng-click="main.logout()" ng-if="main.isAuthenticated()"><a href="#">Logout</a></li>
     </ul>
   </nav>
-  <form ng-submit="main.searchMovies()">
-    <input type="text" ng-model="main.movie">
-    <button>Submit</button>
-  </form>
 
-  <div ng-repeat="movie in main.movies">
-    <h5>{{ movie.title }}</h5>
-    <button ng-click="main.likeMovie()">Like</button>
+  <div ng-controller="MediaIndexCtrl as mediaIndex">
+    <form ng-submit="mediaIndex.searchMedia()">
+      <input type="text" ng-model="mediaIndex.medium">
+      <button>Submit</button>
+    </form>
+
+    <div ng-repeat="medium in mediaIndex.media">
+      <h5>{{ medium.title }}</h5>
+      <button ng-click="mediaIndex.viewMedium(medium)">View</button>
+    </div>
   </div>
 
   <main ui-view>
