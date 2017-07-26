@@ -1,7 +1,28 @@
 <!DOCTYPE html>
+<div class="login">
 
+    <form name="login.loginForm" ng-submit="login.submit()" novalidate class="main-content">
+        <h2>Login</h2>
+      <div class="l-part">
 
-<form ng-submit="login.submit()" class="six columns">
+        <input type="email" name="email" id="email" ng-model="login.credentials.email" required placeholder="Email" class="input-1" >
+        <div ng-messages="login.loginForm.email.$error" role="alert" ng-show="(login.loginForm.$submitted || login.loginForm.email.$touched) && login.loginForm.email.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+          <div ng-message="email">This field must be a valid email address.</div>
+        </div>
+      </div>
+        <div class="l-part">
+
+          <input type="password" name="password" id="password" ng-model="login.credentials.password" required placeholder="Password" class="input-2">
+          <div ng-messages="login.loginForm.password.$error" role="alert" ng-show="(login.loginForm.$submitted || login.loginForm.password.$touched) && login.loginForm.password.$invalid" class="error">
+            <div ng-message="required">Please enter a value for this field.</div>
+          </div>
+        </div>
+        <button class="btn">Login</button>
+      </form>
+    </div>
+
+<!-- <form ng-submit="login.submit()" class="six columns">
   <label for="email">Email</label>
   <input class="u-full-width" type="text" name="email" id="email" ng-model="login.credentials.email">
 
@@ -9,7 +30,7 @@
   <input class="u-full-width" type="password" name="password" id="password" ng-model="login.credentials.password">
 
   <input type="submit" class="button-primary u-full-width" value="Login">
-</form>
+</form> -->
 <!-- <div class="twelve columns">
   <button ng-click="login.authenticate('github')">Login with GitHub</button>
   <button ng-click="login.authenticate('facebook')">Login with Facebook</button>

@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+
 <h1>{{ mediaShow.medium.name }}</h1>
 <h2>{{ mediaShow.medium.overview }}</h2>
-<img ng-src="{{ mediaShow.medium.poster_path }}">
+<!-- <img ng-src="{{ mediaShow.medium.poster_path }}"> -->
+
+
+
+<!-- <label ng-repeat="user in mediaShow.users">
+  <input type="checkbox" name="likes" checklist-model="mediaShow.medium.like_ids" checklist-value="user.id"> {{ user.username }}
+</label> -->
+<button ng-click="mediaShow.toggleLike()">Like</button>
+
+<ul>
+  <li ng-repeat="like in mediaShow.medium.likes">{{ like.username }}</li>
+</ul>
+
+<button ng-click="mediaShow.toggleDislike()">Dislike</button>
+
+<ul>
+  <li ng-repeat="dislike in mediaShow.medium.dislikes">{{ dislike.username }}</li>
+</ul>

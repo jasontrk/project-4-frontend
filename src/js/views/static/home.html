@@ -31,3 +31,27 @@
 -->
 <!-- </ul>
 </body> -->
+<div class="grid" ng-controller="MediaIndexCtrl as mediaIndex">
+  <h1>Search Movies</h1>
+
+    <form ng-submit="mediaIndex.searchMedia()" class="search">
+
+      <div class="form__field">
+        <input type="text" name="search" placeholder="What are you looking for?" class="form__input" ng-model="mediaIndex.medium">
+        <input type="submit" value="Search" class="button">
+        <!-- <input type="submit" value="Search" class="button"> -->
+      </div>
+      <div ng-repeat="medium in mediaIndex.media">
+
+        <button ng-click="mediaIndex.viewMedium(medium)"><h5>{{ medium.title }}</h5></button>
+      </div>
+    </form>
+  </div>
+
+
+
+  <!-- <div ng-controller="MediaIndexCtrl as mediaIndex"> -->
+    <!-- <form ng-submit="mediaIndex.searchMedia()">
+      <input type="text" ng-model="mediaIndex.medium">
+      <button>Submit</button>
+    </form> -->
