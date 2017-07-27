@@ -21,14 +21,20 @@
 
       <h2>Top Rated Movies</h2>
 
-    <div ng-repeat="medium in mediaIndex.all">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3" ng-repeat="medium in mediaIndex.all">
       <img ng-src="{{ medium.poster_path_src }}">
       <a ui-sref="mediaShow({ id: medium.id })">{{ medium.name }}</a>
-      Likes: {{ medium.likes.length }}
-      Dislikes: {{ medium.dislikes.length }}
+      <i class="fa fa-thumbs-up">{{ medium.likes.length }}</i>
+      <i class="fa fa-thumbs-down">{{ medium.dislikes.length }}</i>
     </div>
-
+     <div>
+     </div>
   </div>
+</div>
+
+
 
 
 

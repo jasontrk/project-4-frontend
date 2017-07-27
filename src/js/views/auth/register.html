@@ -3,10 +3,12 @@
   <form name="register.registerForm" ng-submit="register.submit()" novalidate class="form-register">
     <h2 class="form-register-heading">Register</h2>
 
+  <div class="form-group">
     <input type="text" class="form-control" name="username" placeholder="Username" ng-model="register.user.username" required autofocus="" />
     <div ng-messages="register.registerForm.username.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.username.$touched) && register.registerForm.username.$invalid" class="error">
       <div ng-message="required">Please enter a value for this field.</div>
     </div>
+  </div>
 
     <input type="text" class="form-control" name="firstname" placeholder="Firstname" ng-model="register.user.firstname" required autofocus="" />
     <div ng-messages="register.registerForm.firstname.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.firstname.$touched) && register.registerForm.firstname.$invalid" class="error">
@@ -18,24 +20,26 @@
       <div ng-message="required">Please enter a value for this field.</div>
     </div>
 
-    <input type="text" class="form-control" name="email" placeholder="Email Address" ng-model="login.credentials.email" required autofocus="" />
-  <div ng-messages="login.loginForm.email.$error" role="alert" ng-show="(login.registerForm.$submitted) && login.registerForm.email.$invalid" class="error">
+    <input type="text" class="form-control" name="email" placeholder="Email Address" ng-model="register.credentials.email" required autofocus="" />
+  <div ng-messages="register.registerForm.email.$error" role="alert" ng-show="(register.registerForm.$submitted) && register.registerForm.email.$invalid" class="error">
     <div ng-message="required">Please enter a value for this field.</div>
     <div ng-message="email">This field must be a valid email address.</div>
   </div>
 
-    <input type="password" class="form-control" name="password" placeholder="Password" ng-model="login.credentials.password" required />
-    <div ng-messages="login.loginForm.email.$error" role="alert" ng-show="(login.registerForm.$submitted) && login.registerForm.password.$invalid" class="error">
+    <input type="password" class="form-control" name="password" placeholder="Password" ng-model="register.credentials.password" required />
+    <div ng-messages="register.registerForm.email.$error" role="alert" ng-show="(register.registerForm.$submitted) && register.registerForm.password.$invalid" class="error">
       <div ng-message="required">Please enter a value for this field.</div>
       <div ng-message="email">This field must be a valid email address.</div>
     </div>
 
-    <input type="password" class="form-control" name="passwordConfirmation" placeholder="Password Confirmation" ng-model="login.credentials.passwordConfirmation" required />
-    <div ng-messages="login.loginForm.email.$error" role="alert" ng-show="(login.registerForm.$submitted) && login.registerForm.passwordConfirmation.$invalid" class="error">
-      <div ng-messages="register.registerForm.passwordConfirmation.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.passwordConfirmation.$touched) && register.registerForm.passwordConfirmation.$invalid" class="error">
+    <input type="password" class="form-control" name="passwordConfirmation" placeholder="Password Confirmation" ng-model="register.credentials.passwordConfirmation" required />
+    <div ng-messages="register.registerForm.email.$error" role="alert" ng-show="(register.registerForm.$submitted) && register.registerForm.passwordConfirmation.$invalid" class="error">
+      <div ng-message="register.registerForm.passwordConfirmation.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.passwordConfirmation.$touched) && register.registerForm.passwordConfirmation.$invalid" class="error">
         <div ng-message="required">Please enter a value for this field.</div>
       </div>
-    <input type="submit" value="Login" class="button">
+    </div>
+      <br>
+    <input type="submit" value="Register" class="button">
   </form>
 </div>
 
