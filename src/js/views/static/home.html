@@ -41,11 +41,23 @@
         <input type="submit" value="Search" class="button">
         <!-- <input type="submit" value="Search" class="button"> -->
       </div>
+          </form>
       <div ng-repeat="medium in mediaIndex.media">
-
-        <button ng-click="mediaIndex.viewMedium(medium)"><h5>{{ medium.title }}</h5></button>
+        <a ng-click="mediaIndex.viewMedium(medium)">
+            <img ng-src="https://image.tmdb.org/t/p/w45/{{ medium.poster_path }}">
+          {{ medium.title }}
+        </a>
       </div>
-    </form>
+
+      <h2>Top Rated Movies</h2>
+
+    <div ng-repeat="medium in mediaIndex.all">
+      <img ng-src="{{ medium.poster_path_src }}">
+      <a ui-sref="mediaShow({ id: medium.id })">{{ medium.name }}</a>
+      Likes: {{ medium.likes.length }}
+      Dislikes: {{ medium.dislikes.length }}
+    </div>
+
   </div>
 
 

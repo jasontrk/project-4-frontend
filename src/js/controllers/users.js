@@ -19,26 +19,20 @@ function UsersShowCtrl(User, $stateParams, $state, $auth) {
 
   User.get($stateParams, (user)=>{
     vm.user = user;
-  
-
   });
 
-  // function openModal() {
-  //   $uibModal.open({
-  //     templateUrl: 'js/views/partials/userDeleteModal.html',
-  //     controller: 'UsersDeleteCtrl as usersDelete',
-  //     resolve: {
-  //       currentUser: () => {
-  //         return vm.user;
-  //       }
-  //     }
-  //   });
-  // }
-  // vm.openModal = openModal;
+  function usersDelete() {
 
+    vm.user
+      .$remove()
+      .then(() => {
+        $auth.logout();
+        $state.go( 'mediaIndex' );
+        // $uibModalInstance.close();
+      });
+  }
 
-
-
+  vm.delete = usersDelete;
 }
 
 UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
@@ -62,7 +56,7 @@ function UsersDeleteCtrl($uibModalInstance, currentUser, $state, $auth) {
   vm.user = currentUser;
 
   function closeModal() {
-    $uibModalInstance.close();
+    // $uibModalInstance.close();
     // console.log(currentUser.username);
   }
 
@@ -75,7 +69,7 @@ function UsersDeleteCtrl($uibModalInstance, currentUser, $state, $auth) {
       .then(() => {
         $auth.logout();
         $state.go( 'mediaIndex' );
-        $uibModalInstance.close();
+        // $uibModalInstance.close();
       });
   }
 

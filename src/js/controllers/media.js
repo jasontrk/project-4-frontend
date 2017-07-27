@@ -4,18 +4,20 @@ angular
 .controller('MediaNewCtrl', MediaNewCtrl)
 .controller('MediaShowCtrl', MediaShowCtrl);
 
-MediaIndexCtrl.$inject = ['Medium', 'tmdb', '$state'];
-function MediaIndexCtrl(Medium, tmdb, $state) {
+MediaIndexCtrl.$inject = ['Medium', 'tmdb', '$state', '$scope', 'orderByFilter'];
+function MediaIndexCtrl(Medium, tmdb, $state, $scope, orderByFilter) {
   const vm = this;
 
-  vm.all = Medium.query();
+  Medium.query()
+    .$promise
+    .then((media) => {
+      vm.all = orderByFilter(media, (media) => media.likes.length, true);
+    });
 
   function searchMedia(){
     tmdb.getMovies(vm.medium)
     .then((response) => {
       vm.media = response.results;
-      console.log(response);
-
     });
   }
   vm.searchMedia = searchMedia;
@@ -30,14 +32,11 @@ function MediaIndexCtrl(Medium, tmdb, $state) {
       release_date: medium.release_date
     };
 
-    console.log('The medium I want to save:', newMedium);
-
     Medium
     .save(newMedium)
     .$promise
     .then((savedMedium) => {
-      console.log('The saved movie in our DB:', savedMedium);
-      vm.media = [];
+      vm.media = {};
       $state.go('mediaShow', { id: savedMedium.id });
     });
   }
