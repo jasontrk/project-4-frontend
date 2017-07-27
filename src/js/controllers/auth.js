@@ -3,8 +3,6 @@ angular
   .controller('RegisterCtrl', RegisterCtrl)
   .controller('LoginCtrl', LoginCtrl);
 
-console.log('AuthCtrl');
-
 RegisterCtrl.$inject = ['$auth', '$state'];
 function RegisterCtrl($auth, $state) {
   const vm = this;

@@ -2,8 +2,6 @@ angular
 .module('mediaApp')
 .controller('MainCtrl', MainCtrl);
 
-console.log('MainCtrl');
-
 MainCtrl.$inject = ['$rootScope', '$state', '$auth', '$transitions', 'User'];
 function MainCtrl($rootScope, $state, $auth, $transitions, User) {
   const vm = this;

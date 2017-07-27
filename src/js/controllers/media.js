@@ -4,8 +4,6 @@ angular
 .controller('MediaNewCtrl', MediaNewCtrl)
 .controller('MediaShowCtrl', MediaShowCtrl);
 
-console.log('MediaCtrl');
-
 MediaIndexCtrl.$inject = ['Medium', 'tmdb', '$state', '$scope', 'orderByFilter'];
 function MediaIndexCtrl(Medium, tmdb, $state, $scope, orderByFilter) {
   const vm = this;

@@ -2,8 +2,6 @@ angular
   .module('mediaApp')
   .service('tmdb', Tmdb);
 
-console.log('tmdb');
-
 Tmdb.$inject = ['$http', 'API_URL'];
 function Tmdb($http, API_URL) {
   const vm = this;

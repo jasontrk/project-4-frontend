@@ -2,8 +2,6 @@ angular
   .module('mediaApp')
   .factory('User', User);
 
-console.log('User');
-
 User.$inject = ['$resource', 'API_URL'];
 function User($resource, API_URL) {
   return new $resource(`${API_URL}/users/:id`, { id: '@id' }, {

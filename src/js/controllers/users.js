@@ -5,10 +5,6 @@ angular
 .controller('UsersEditCtrl', UsersEditCtrl)
 .controller('UsersDeleteCtrl', UsersDeleteCtrl);
 
-
-console.log('UsersCtrl');
-
-
 UsersIndexCtrl.$inject = ['User'];
 function UsersIndexCtrl(User) {
   const vm = this;
