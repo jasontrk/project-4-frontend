@@ -1,7 +1,22 @@
 <!DOCTYPE html>
-<!-- <div class="wrapper">
+<div class="wrapper">
   <form name="register.registerForm" ng-submit="register.submit()" novalidate class="form-register">
     <h2 class="form-register-heading">Register</h2>
+
+    <input type="text" class="form-control" name="username" placeholder="Username" ng-model="register.user.username" required autofocus="" />
+    <div ng-messages="register.registerForm.username.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.username.$touched) && register.registerForm.username.$invalid" class="error">
+      <div ng-message="required">Please enter a value for this field.</div>
+    </div>
+
+    <input type="text" class="form-control" name="firstname" placeholder="Firstname" ng-model="register.user.firstname" required autofocus="" />
+    <div ng-messages="register.registerForm.firstname.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.firstname.$touched) && register.registerForm.firstname.$invalid" class="error">
+      <div ng-message="required">Please enter a value for this field.</div>
+    </div>
+
+    <input type="text" class="form-control" name="lastname" placeholder="Lastname" ng-model="register.user.lastname" required autofocus="" />
+    <div ng-messages="register.registerForm.lastname.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.lastname.$touched) && register.registerForm.lastname.$invalid" class="error">
+      <div ng-message="required">Please enter a value for this field.</div>
+    </div>
 
     <input type="text" class="form-control" name="email" placeholder="Email Address" ng-model="login.credentials.email" required autofocus="" />
   <div ng-messages="login.loginForm.email.$error" role="alert" ng-show="(login.loginForm.$submitted) && login.loginForm.email.$invalid" class="error">
@@ -14,14 +29,20 @@
       <div ng-message="required">Please enter a value for this field.</div>
       <div ng-message="email">This field must be a valid email address.</div>
     </div>
+
+    <input type="password" class="form-control" name="passwordConfirmation" placeholder="Password Confirmation" ng-model="login.credentials.password" required />
+    <div ng-messages="login.loginForm.email.$error" role="alert" ng-show="(login.loginForm.$submitted) && login.loginForm.email.$invalid" class="error">
+      <div ng-message="required">Please enter a value for this field.</div>
+      <div ng-message="email">This field must be a valid email address.</div>
+    </div>
 <br>
     <input type="submit" value="Login" class="button">
   </div>
 
   </form>
-</div> -->
+</div>
 
-
+<!--
 <div class="register">
   <div>
 
@@ -79,4 +100,4 @@
       <button class="btn">Register</button>
     </form>
   </div>
-</div>
+</div> -->
