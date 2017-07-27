@@ -1,5 +1,6 @@
 // Import all of your scss files here
 // Import all of your scss files here
+
 html, body {
   height: 100%;
 }
@@ -123,7 +124,7 @@ input[type="search"]::-webkit-search-decoration {
   --searchInputButtonHoverBackgroundColor: #189e83;
 }
 
-.search {
+.search, .button {
   background-color: var(--searchBackgroundColor);
   border-radius: var(--searchBorderRadius);
   font-size: var(--searchFontSize);
@@ -131,17 +132,17 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 .search input[type="search"],
-.search input[type="submit"] {
+.search input[type="submit"], .button {
   border-radius: var(--searchInputBorderRadius);
 }
 
-.search input[type="search"] {
+.search input[type="search"], .button {
   background-color: var(--searchInputSearchBackgroundColor);
   color: var(--searchInputSearchColor);
   padding: var(--searchInputSearchPaddingVertical) var(--searchInputSearchPaddingHorizontal);
 }
 
-.search input[type="submit"] {
+.search input[type="submit"], .button {
   background-color: var(--searchInputButtonBackgroundColor);
   color: var(--searchInputButtonColor);
   font-weight: var(--searchInputButtonFontWeight);
@@ -149,7 +150,7 @@ input[type="search"]::-webkit-search-decoration {
   padding: var(--searchInputButtonPaddingVertical) var(--searchInputButtonPaddingHorizontal);
 }
 
-.search input[type="submit"]:hover {
+.search input[type="submit"], .button :hover {
   background-color: var(--searchInputButtonHoverBackgroundColor);
 }
 
@@ -203,4 +204,53 @@ nav {
   background-color: white;
   padding: 10px;
   margin-bottom: 20px;
+}
+
+
+
+body {
+	background: #eee !important;
+}
+
+.wrapper {
+	margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin, .form-register {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+
+  .form-signin-heading,
+	.form-register-heading {
+	  margin-bottom: 30px;
+	}
+
+
+	.form-control {
+	  position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+
+
+		&:focus {
+		  z-index: 2;
+		}
+	}
+
+	input[type="text"] {
+	  margin-bottom: -1px;
+	  border-bottom-left-radius: 0;
+	  border-bottom-right-radius: 0;
+	}
+
+	input[type="password"] {
+	  margin-bottom: 20px;
+	  border-top-left-radius: 0;
+	  border-top-right-radius: 0;
+	}
 }

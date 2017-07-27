@@ -1,4 +1,28 @@
 <!DOCTYPE html>
+
+<div class="wrapper">
+  <form name="login.loginForm" ng-submit="login.submit()" novalidate class="form-signin">
+    <h2 class="form-signin-heading">Login</h2>
+
+    <input type="text" class="form-control" name="email" placeholder="Email Address" ng-model="login.credentials.email" required autofocus="" />
+  <div ng-messages="login.loginForm.email.$error" role="alert" ng-show="(login.loginForm.$submitted) && login.loginForm.email.$invalid" class="error">
+    <div ng-message="required">Please enter a value for this field.</div>
+    <div ng-message="email">This field must be a valid email address.</div>
+  </div>
+
+    <input type="password" class="form-control" name="password" placeholder="Password" ng-model="login.credentials.password" required />
+    <div ng-messages="login.loginForm.email.$error" role="alert" ng-show="(login.loginForm.$submitted) && login.loginForm.email.$invalid" class="error">
+      <div ng-message="required">Please enter a value for this field.</div>
+      <div ng-message="email">This field must be a valid email address.</div>
+    </div>
+<br>
+    <input type="submit" value="Login" class="button">
+  </div>
+
+  </form>
+</div>
+
+<!--
 <div class="login">
 
     <form name="login.loginForm" ng-submit="login.submit()" novalidate class="main-content">
@@ -20,7 +44,7 @@
         </div>
         <button class="btn">Login</button>
       </form>
-    </div>
+    </div> -->
 
 <!-- <form ng-submit="login.submit()" class="six columns">
   <label for="email">Email</label>

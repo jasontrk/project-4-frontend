@@ -23,7 +23,7 @@ function LoginCtrl($auth, $state) {
 
   function submit() {
     $auth.login(vm.credentials)
-      .then(() => $state.go('mediaIndex'));
+      .then(() => $state.go('home'));
   }
 
   vm.submit = submit;

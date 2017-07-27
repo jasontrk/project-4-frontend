@@ -1,6 +1,28 @@
 <!DOCTYPE html>
+<!-- <div class="wrapper">
+  <form name="register.registerForm" ng-submit="register.submit()" novalidate class="form-register">
+    <h2 class="form-register-heading">Register</h2>
 
-<!-- <div class="register">
+    <input type="text" class="form-control" name="email" placeholder="Email Address" ng-model="login.credentials.email" required autofocus="" />
+  <div ng-messages="login.loginForm.email.$error" role="alert" ng-show="(login.loginForm.$submitted) && login.loginForm.email.$invalid" class="error">
+    <div ng-message="required">Please enter a value for this field.</div>
+    <div ng-message="email">This field must be a valid email address.</div>
+  </div>
+
+    <input type="password" class="form-control" name="password" placeholder="Password" ng-model="login.credentials.password" required />
+    <div ng-messages="login.loginForm.email.$error" role="alert" ng-show="(login.loginForm.$submitted) && login.loginForm.email.$invalid" class="error">
+      <div ng-message="required">Please enter a value for this field.</div>
+      <div ng-message="email">This field must be a valid email address.</div>
+    </div>
+<br>
+    <input type="submit" value="Login" class="button">
+  </div>
+
+  </form>
+</div> -->
+
+
+<div class="register">
   <div>
 
     <form name="register.registerForm" ng-submit="register.submit()" novalidate class="main-content">
@@ -9,6 +31,20 @@
         <label for="username">Username</label>
         <input type="text" name="username" id="username" ng-model="register.user.username" required>
         <div ng-messages="register.registerForm.username.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.username.$touched) && register.registerForm.username.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+        </div>
+      </div>
+      <div class="section">
+        <label for="firstname">Firstname</label>
+        <input type="text" name="firstname" id="firstname" ng-model="register.user.firstname" required>
+        <div ng-messages="register.registerForm.firstname.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.firstname.$touched) && register.registerForm.firstname.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+        </div>
+      </div>
+      <div class="section">
+        <label for="lastname">Lastname</label>
+        <input type="text" name="lastname" id="lastname" ng-model="register.user.lastname" required>
+        <div ng-messages="register.registerForm.lastname.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.lastname.$touched) && register.registerForm.lastname.$invalid" class="error">
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
@@ -38,39 +74,9 @@
         </div>
       </div>
 
-      <div class="section">
-        <div><label for="image">Image</label>
-        <input base64 type="file" name="image" id="image" ng-model="register.user.base64" required></div>
-        <div ng-messages="register.registerForm.base64.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.base64.$touched) && register.registerForm.base64.$invalid" class="error">
-          <div ng-message="required">Please enter a value for this field.</div>
-        </div>
-
-        <img ng-src="{{ register.user.base64 }}">
-      </div>
 
 
       <button class="btn">Register</button>
     </form>
   </div>
-</div> -->
-<form ng-submit="register.submit()" class="six columns">
-  <label for="username">Username</label>
-  <input class="u-full-width" type="text" name="username" id="username" ng-model="register.user.username">
-
-  <label for="firstname">First Name</label>
-  <input class="u-full-width" type="text" name="firstname" id="first a e" ng-model="register.user.firstname">
-
-  <label for="lastname">Last Name</label>
-  <input class="u-full-width" type="text" name="lastname" id="lastname" ng-model="register.user.lastname">
-
-  <label for="email">Email</label>
-  <input class="u-full-width" type="text" name="email" id="email" ng-model="register.user.email">
-
-  <label for="password">Password</label>
-  <input class="u-full-width" type="password" name="password" id="password" ng-model="register.user.password">
-
-  <label for="passwordConfirmation">Password Confirmation</label>
-  <input class="u-full-width" type="password" name="passwordConfirmation" id="passwordConfirmation" ng-model="register.user.passwordConfirmation">
-
-  <input type="submit" class="button-primary u-full-width" value="Register">
-</form>
+</div>
