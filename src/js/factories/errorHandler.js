@@ -2,6 +2,8 @@ angular
   .module('mediaApp')
   .factory('ErrorHandler', ErrorHandler);
 
+console.log('ErrorHandler');
+
 ErrorHandler.$inject = ['$rootScope'];
 function ErrorHandler($rootScope) {
   return {

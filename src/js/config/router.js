@@ -2,6 +2,8 @@ angular
 .module('mediaApp')
 .config(Router);
 
+console.log('Router');
+
 Router.inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true);

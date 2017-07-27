@@ -2,6 +2,8 @@ angular
   .module('mediaApp')
   .config(Auth);
 
+console.log('Auth');
+
 Auth.$inject = ['$authProvider', 'API_URL'];
 function Auth($authProvider, API_URL) {
   $authProvider.signupUrl = `${API_URL}/register`;

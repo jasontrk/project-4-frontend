@@ -6,18 +6,21 @@ angular
 .controller('UsersDeleteCtrl', UsersDeleteCtrl);
 
 
+console.log('UsersCtrl');
+
+
 UsersIndexCtrl.$inject = ['User'];
 function UsersIndexCtrl(User) {
   const vm = this;
   vm.all = User.query();
 }
 
-UsersShowCtrl.$inject = ['User', '$stateParams', '$state', '$auth'];
-function UsersShowCtrl(User, $stateParams, $state, $auth) {
+UsersShowCtrl.$inject = ['User', '$state', '$auth'];
+function UsersShowCtrl(User, $state, $auth) {
 
   const vm = this;
 
-  User.get($stateParams, (user)=>{
+  User.get($state.params, (user)=>{
     vm.user = user;
   });
 
@@ -35,16 +38,16 @@ function UsersShowCtrl(User, $stateParams, $state, $auth) {
   vm.delete = usersDelete;
 }
 
-UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
-function UsersEditCtrl(User, $stateParams, $state) {
+UsersEditCtrl.$inject = ['User', '$state'];
+function UsersEditCtrl(User, $state) {
   const vm = this;
 
-  vm.user = User.get($stateParams);
+  vm.user = User.get($state.params);
 
   function usersUpdate() {
     vm.user
     .$update()
-    .then(() => $state.go('usersShow', $stateParams));
+    .then(() => $state.go('usersShow', $state.params));
   }
 
   vm.update = usersUpdate;
