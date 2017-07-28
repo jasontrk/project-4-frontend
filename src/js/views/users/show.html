@@ -1,32 +1,46 @@
 <!DOCTYPE html>
+<div class="grid">
+  <div class="user">
 
-<div class="user">
-
-  <div class="userImage"><img class="img-responsive" ng-src="{{ usersShow.user.imageSRC }}"></div>
-  <div class="userInfo">
-    <h2>Welcome back {{ usersShow.user.username }}</h2>
-    <!-- <form> -->
+    <div class="userImage"><img class="img-responsive" ng-src="{{ usersShow.user.imageSRC }}"></div>
+    <div class="userInfo">
+      <h2>Welcome back {{ usersShow.user.username }}</h2>
+      <!-- <form> -->
       <a ui-sref="usersEdit({ id: usersShow.user.id })" class="btn" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.user.id">Edit Account</a>
       <!-- <input type="hidden" name="_method" value="DELETE" "> -->
       <button class="btn" ng-click="usersShow.delete()" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.user.id">Delete Account</button>
-    <!-- </form> -->
+      <!-- </form> -->
 
+      <br>
+
+      <h2 class="title">My Likes</h2>
+
+    </br>
+    <div class="container">
+      <div class="row ">
+        <div class="col-lg-3" ng-repeat="medium in usersShow.user.liked_media">
+          <ul>
+            <li>
+              <img ng-src="{{ medium.poster_path_src }}">
+              <a ui-sref="mediaShow({ id: medium.id })">{{ medium.name }}</a>
+
+              <p>Other people who like this movie:</p>
+              <ul>
+                <li ng-repeat="user in medium.likes" ng-hide="usersShow.user.id === user.id"><a ui-sref="usersShow({ id: user.id })">{{ user.username }}</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
 
 
   </div>
 </div>
 
 
-<h2 class="title">My Likes</h2>
 
-<ul>
-  <li ng-repeat="medium in usersShow.user.liked_media">
-    <img ng-src="{{ medium.poster_path_src }}">
-    <a ui-sref="mediaShow({ id: medium.id })">{{ medium.name }}</a>
 
-    <p>Other people who like this movie:</p>
-    <ul>
-      <li ng-repeat="user in medium.likes" ng-hide="usersShow.user.id === user.id"><a ui-sref="usersShow({ id: user.id })">{{ user.username }}</a></li>
-    </ul>
-  </li>
-</ul>
+</div>

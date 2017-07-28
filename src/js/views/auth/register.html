@@ -10,10 +10,12 @@
     </div>
   </div>
 
+  <div class="form-group">
     <input type="text" class="form-control" name="firstname" placeholder="Firstname" ng-model="register.user.firstname" required autofocus="" />
     <div ng-messages="register.registerForm.firstname.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.firstname.$touched) && register.registerForm.firstname.$invalid" class="error">
       <div ng-message="required">Please enter a value for this field.</div>
     </div>
+  </div>
 
     <input type="text" class="form-control" name="lastname" placeholder="Lastname" ng-model="register.user.lastname" required autofocus="" />
     <div ng-messages="register.registerForm.lastname.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.lastname.$touched) && register.registerForm.lastname.$invalid" class="error">

@@ -257,3 +257,30 @@ body {
 	  border-top-right-radius: 0;
 	}
 }
+
+.card-block {
+  margin: 5px;
+}
+
+.userCard {
+  background-color: white !important;
+  image {
+    height: 500px;
+  }
+}
+
+.card{
+  margin-left: 20%;
+}
+
+.fa-thumbs-up.liked {
+  color: green;
+}
+
+.fa-thumbs-down.disliked {
+  color: red;
+}
+
+.titleoverview {
+  float: right;
+}

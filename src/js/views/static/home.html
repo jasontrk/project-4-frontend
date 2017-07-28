@@ -4,42 +4,66 @@
 <div class="grid" ng-controller="MediaIndexCtrl as mediaIndex">
   <h1>Search Movies</h1>
 
-    <form ng-submit="mediaIndex.searchMedia()" class="search">
+  <form ng-submit="mediaIndex.searchMedia()" class="search">
 
-      <div class="form__field">
-        <input type="text" name="search" placeholder="What are you looking for?" class="form__input" ng-model="mediaIndex.medium">
-        <input type="submit" value="Search" class="button">
-        <!-- <input type="submit" value="Search" class="button"> -->
-      </div>
-          </form>
-      <div ng-repeat="medium in mediaIndex.media">
-        <a ng-click="mediaIndex.viewMedium(medium)">
-            <img ng-src="https://image.tmdb.org/t/p/w45/{{ medium.poster_path }}">
-          {{ medium.title }}
-        </a>
-      </div>
-
-      <h2>Top Rated Movies</h2>
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-3" ng-repeat="medium in mediaIndex.all">
-      <img ng-src="{{ medium.poster_path_src }}">
-      <a ui-sref="mediaShow({ id: medium.id })">{{ medium.name }}</a>
-      <i class="fa fa-thumbs-up">{{ medium.likes.length }}</i>
-      <i class="fa fa-thumbs-down">{{ medium.dislikes.length }}</i>
+    <div class="form__field">
+      <input type="text" name="search" placeholder="What are you looking for?" class="form__input" ng-model="mediaIndex.medium">
+      <input type="submit" value="Search" class="button">
+      <!-- <input type="submit" value="Search" class="button"> -->
     </div>
-     <div>
-     </div>
+  </form>
+  <div ng-repeat="medium in mediaIndex.media">
+    <a ng-click="mediaIndex.viewMedium(medium)">
+      <img ng-src="https://image.tmdb.org/t/p/w45/{{ medium.poster_path }}">
+      {{ medium.title }}
+    </a>
   </div>
+
+  <br>
+  <h2>Top Rated Movies</h2>
+  <br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4" ng-repeat="medium in mediaIndex.all">
+        <div class="card text-center" style="width: 20rem;">
+          <div class="card-block" ui-sref="mediaShow({ id: medium.id })">
+            <img ng-src="{{ medium.poster_path_med }}">
+            <h1 class"homeTitle">{{ medium.name }}</h1>
+            <div>
+              <i class="fa fa-thumbs-up fa-2x" ng-click="mediaShow.toggleLike()">{{ medium.likes.length }}</i>
+              <i class="fa fa-thumbs-down fa-2x" ng-click="mediaShow.toggleDislike()">{{ medium.dislikes.length }}</i>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 
 
+<!-- <div class="container">
+<div class="row">
+<div class="col-lg-4" ng-repeat="medium in mediaIndex.all">
+<img ng-src="{{ medium.poster_path_med }}">
+<a ui-sref="mediaShow({ id: medium.id })">{{ medium.name }}</a>
+<i class="fa fa-thumbs-up fa-2x">{{ medium.likes.length }}</i>
+<i class="fa fa-thumbs-down fa-2x">{{ medium.dislikes.length }}</i>
+</div>
+<div>
+</div>
+</div>
+</div>
+</div> -->
 
 
-  <!-- <div ng-controller="MediaIndexCtrl as mediaIndex"> -->
-    <!-- <form ng-submit="mediaIndex.searchMedia()">
-      <input type="text" ng-model="mediaIndex.medium">
-      <button>Submit</button>
-    </form> -->
+
+
+
+<!-- <div ng-controller="MediaIndexCtrl as mediaIndex"> -->
+<!-- <form ng-submit="mediaIndex.searchMedia()">
+<input type="text" ng-model="mediaIndex.medium">
+<button>Submit</button>
+</form> -->

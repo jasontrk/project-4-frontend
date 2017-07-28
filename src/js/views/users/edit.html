@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<form ng-submit="usersEdit.update()">
+<!-- <form ng-submit="usersEdit.update()">
   <div class="form-group">
     <label for="name">Username</label>
     <input type="text" name="name" id="name" ng-model="usersEdit.user.username" class="form-control">
@@ -14,4 +14,51 @@
   </div>
 
   <button class="btn">Update</button>
-</form>
+</form> -->
+
+<div class="grid"
+<div class="wrapper">
+  <form name="usersEdit.usersEditForm" ng-submit="usersEdit.update()" novalidate class="form-usersEdit">
+    <h2 class="form-usersEdit-heading">Edit Account</h2>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="username" placeholder="Username" ng-model="usersEdit.user.username" required autofocus="" />
+    <div ng-messages="usersEdit.usersEditForm.username.$error" role="alert" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEdit.username.$touched) && usersEdit.usersEditForm.username.$invalid" class="error">
+      <div ng-message="required">Please enter a value for this field.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="firstname" placeholder="Firstname" ng-model="usersEdit.user.firstname" required autofocus="" />
+    <div ng-messages="usersEdit.usersEditorm.firstname.$error" role="alert" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.firstname.$touched) && usersEdit.usersEditForm.firstname.$invalid" class="error">
+      <div ng-message="required">Please enter a value for this field.</div>
+    </div>
+  </div>
+
+    <input type="text" class="form-control" name="lastname" placeholder="Lastname" ng-model="usersEdit.user.lastname" required autofocus="" />
+    <div ng-messages="usersEdit.usersEditForm.lastname.$error" role="alert" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.lastname.$touched) && usersEdit.usersEditForm.lastname.$invalid" class="error">
+      <div ng-message="required">Please enter a value for this field.</div>
+    </div>
+
+    <input type="text" class="form-control" name="email" placeholder="Email Address" ng-model="usersEdit.credentials.email" required autofocus="" />
+  <div ng-messages="usersEdit.usersEditForm.email.$error" role="alert" ng-show="(usersEdit.usersEditForm.$submitted) && usersEdit.rusersEditForm.email.$invalid" class="error">
+    <div ng-message="required">Please enter a value for this field.</div>
+    <div ng-message="email">This field must be a valid email address.</div>
+  </div>
+
+    <input type="password" class="form-control" name="password" placeholder="Password" ng-model="usersEdit.credentials.password" required />
+    <div ng-messages="usersEdit.usersEditForm.email.$error" role="alert" ng-show="(usersEdit.usersEditForm.$submitted) && usersEdit.usersEditForm.password.$invalid" class="error">
+      <div ng-message="required">Please enter a value for this field.</div>
+      <div ng-message="email">This field must be a valid email address.</div>
+    </div>
+
+    <input type="password" class="form-control" name="passwordConfirmation" placeholder="Password Confirmation" ng-model="usersEdit.credentials.passwordConfirmation" required />
+    <div ng-messages="usersEdit.usersEditForm.email.$error" role="alert" ng-show="(usersEdit.usersEditForm.$submitted) && usersEdit.usersEditForm.passwordConfirmation.$invalid" class="error">
+      <div ng-message="usersEdit.usersEditForm.passwordConfirmation.$error" role="alert" ng-show="(usersEdit.usersEditForm.$submitted || usersEdit.usersEditForm.passwordConfirmation.$touched) && usersEdit.usersEditForm.passwordConfirmation.$invalid" class="error">
+        <div ng-message="required">Please enter a value for this field.</div>
+      </div>
+    </div>
+      <br>
+    <input type="submit" value="Update" class="button">
+  </form>
+</div>

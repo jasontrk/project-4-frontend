@@ -75,6 +75,10 @@ function MediaShowCtrl(Medium, $stateParams, $auth, User) {
     vm.medium = medium;
   });
 
+// if it can find the index in the likes, take it out.
+// Else push it in.
+//If it then finds the user within dislikes, take it out
+
   function toggleLike() {
     const index = vm.medium.like_ids.indexOf(vm.currentUser.id);
     const dislikeIndex = vm.medium.dislike_ids.indexOf(vm.currentUser.id);
@@ -132,5 +136,5 @@ function MediaShowCtrl(Medium, $stateParams, $auth, User) {
     return $auth.getPayload() && vm.medium.$resolved && vm.medium.dislike_ids.includes(vm.currentUser.id);
   }
 
-  vm.isDisiked = isDisliked;
+  vm.isDisliked = isDisliked;
 }
